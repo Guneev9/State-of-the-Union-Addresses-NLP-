@@ -4,7 +4,7 @@ from George Washington to Barack Obama, to a joint session of the United States 
 This dataset contains the two texts combined, which are small subsets of the Project Gutenberg Ebook corpus. 
 Here is the Project Gutenberg Ebook web page: http:// http://www.gutenberg.org/
 
-#Analysis
+# Analysis
 Files are taken from Gutenberg EBook "Complete State of Union Addresses" written by James Linden. State of Union addresses 
 is the message given by the President of US to joint session of Congress after first year of a new president's term. 
 George Washington delivered the first annual on January 8, 1790, in New York City. In 1801, Thomas Jefferson discontinued 
@@ -12,19 +12,19 @@ the practice of delivering the address in person and thus, the address was writt
 Presidents during the latter half of the 20th century have sent written State of the Union addresses. For many years, 
 the speech was referred to as "the President's Annual Message to Congress". They contain details about budget and an economic 
 report of nation and allows the President to outline their legislative agenda and national priorities.
-Each Addresses in the book are separated by “***”. Both the files are written by the same author “James Linden”. 
+Each Addresses in the book are separated by star /*/*/*. Both the files are written by the same author 'James Linden'. 
 Every message has sections indicating to whom it is being cited. Naming Convention:
 Content of files have index convention: President Name followed by Title "State of Union Address" followed by the Date, 
 when message has been delivered. The messages have been sorted on basis of year, it is being delivered. 
 Part1 contains messages from year 1790 to 1860 and Part2 contains messages from 1946 to 2016. First file contains 
 71 messages whereas File2 contains 970 messages.
 
-#Document Policy:
+# Document Policy:
 Every book has copyright policy before downloading it in any country or redistributing it. Both the files have header saying 
 that, written permission is needed to remove the header or before making any changes to it. It contains the
 "legal small print," and other information about the eBook and Project Gutenberg. It states important information about
 the specific rights and restrictions in how the file may be used. You can also find out about how to make donation to project
-, and how to get involved. The policy starts with "*** END OF THIS PROJECT GUTENBERG EBOOK STATE UNION ADDRESSES ***".
+, and how to get involved. The policy starts with "END OF THIS PROJECT GUTENBERG EBOOK STATE UNION ADDRESSES".
 Initially, it has mentioned that, anyone can copy and distribute it in the United States without permission and without 
 paying copyright royalties. It’s "General Terms of Use part" section has rules of this license, apply to copying and 
 distributing the project. It further states that book can used for any purpose and can be modified. 
@@ -32,7 +32,7 @@ There is a License note (Points A to F) after that, which is giving instructions
 Then Section-2 talks about mission of Gutenberg project. Section-3 gives information about its Literary Archive Foundation. 
 Section 4 tells about Donations to the its Foundation and Section-5 tells General Information about its electronic works.
 
-##Analysis of State of the Union Addresses dataset: Part1
+## Analysis of State of the Union Addresses dataset: Part1
 #Top 50 words by frequency (normalized by the length of the document):
 As per my understanding of “normalization by the length of document”, I have filtered the frequency by normalizing it against 
 length of filtered Tokens. This means that distribution
@@ -53,7 +53,7 @@ I have normalized this frequency by the length of the document.
 g) I have used the filtered words list for the length of document since, taking the raw corpus length will not give any 
 good results because it contains text which is not useful at all and hence removed from token list.
 
-##Top 50 bigrams by frequencies:
+## Top 50 bigrams by frequencies:
 a) Ihaveusedbigram_with_filter()functiontoapplyvariousfilterfunctionstofinder.I have first applied Get_aplha_words() 
 function to get only alphabetical words. Then further I have applied filter to remove stop words. Now, here I am not 
 lemmatizing the words, so I have included ‘addresses’ also in stop words list. At last I have applied filter to get 
@@ -62,7 +62,7 @@ b) The scores are sorted in order of decreasing frequency.
 c) The Result has given the top 50 bigrams by frequencies of meaningful important
 bigrams.
 
-##Top 50 bigrams by their Mutual Information scores (using min frequency 5)
+## Top 50 bigrams by their Mutual Information scores (using min frequency 5)
 a) I have used the Top50bigrams_MutualInfoScore() function for this.
 b) I have first removed the stop words and fetched only alphabetical words before
 using the PMI measure.
@@ -74,11 +74,11 @@ d)PMI gives strange results when frequencies are very low e.g. 1-3 tokens, thus 
 which takes care of most of the problem.
 e) The result has given me the bigram pairs which are frequent by their associativity.
 
-#Analysis of State of the Union Addresses dataset: Part2
+# Analysis of State of the Union Addresses dataset: Part2
 I have used the same functions for Part-2 as well because it has the similar text containing state of union addresses for 
 ifferent year written by the same author.
 
-##Top 50 words by frequency (normalized by the length of the document):
+## Top 50 words by frequency (normalized by the length of the document):
 a) Get_Corpus() function is created to get corpus using PlaintextCorpusReader.
 b) Tokenize_Corpus() function is used to get tokens from the corpus.
 c) Get_aplha_words(w) function is then used to remove punctuations and non-
@@ -95,13 +95,13 @@ g) I have used the filtered words list for the length of document since, taking 
 corpus length will not give any good results because it contains text which is not useful at all and hence removed 
 from token list.
 
-##Top 50 bigrams by frequencies:
+## Top 50 bigrams by frequencies:
 a) Ihaveusedbigram_with_filter()functiontoapplyvariousfilterfunctionstofinder.I have first applied Get_aplha_words() function 
 to get only alphabetical words. Then further I have applied filter to remove stop words. At last I have applied filter to get words having minimum frequency 0f 2 since otherwise result will not be much helpful.
 b) The scores are sorted in order of decreasing frequency.
 c) The Result has given the top 50 bigrams by frequencies of meaningful important bigrams.
 
-##Top 50 bigrams by their Mutual Information scores (using min frequency 5)
+## Top 50 bigrams by their Mutual Information scores (using min frequency 5)
 a) I have used the Top50bigrams_MutualInfoScore() function for this as well.
 b) I have first removed the stop words and fetched only alphabetical words before
 using the PMI measure.
@@ -113,7 +113,7 @@ d)PMI gives strange results when frequencies are very low e.g. 1-3 tokens, thus 
 a minimum frequency for the collocates, which takes care of most of the problem.
 e) The result has given me the bigram pairs which are frequent by their associativity.
 
-##Comparison of results
+## Comparison of results
 #How are state_union_part1 and state_union_part2 similar or different in the use of the language, based on your results? Why?
 Both the Text Files, state_union_part1 and state_union_part2 are similar in terms of the language. The reason behind this is, 
 that they are written by the same author and thus have the similar writing style and kinds of words used are also similar. 
@@ -122,11 +122,11 @@ quite similar results for both the documents.
 This is the reason, I have filtered the tokens of both the files in same manner because, both the files are written by 
 James Linden. The only difference is the speeches and their delivered time.
 
-#Are there any problems with the word or bigram lists that you found? Could you get a better list of bigrams?
+# Are there any problems with the word or bigram lists that you found? Could you get a better list of bigrams?
 I found some words which have multiple ‘*’ as a prefix or suffix in tokens of both the documents. Such words don’t appear 
 in the Top-50 bigram, as they are few. As per my analysis, Bigram’s list currently contains important pair of words but however they can be improved on further filtering like we can change minimum frequency and then check the results and decide accordingly.
 
-#How are the top 50 bigrams by frequency different from the top 50 bigrams scored by Mutual Information?
+# How are the top 50 bigrams by frequency different from the top 50 bigrams scored by Mutual Information?
 For both the documents, Part1 and Part2, Top-50 bigrams and Top-50 bigrams scored by Mutual Information are different due 
 to following reasons:
 i) The bigrams which I got from bigram_with_filter() function, has words which are important and meaningful for analysis. 
